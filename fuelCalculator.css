@@ -16,7 +16,7 @@ body {
     border: 1px solid black;
     margin: 100px auto;
     height: 580px;
-    width: 550px;
+    width: 650px;
     border-radius: 20px;
     position: relative;
     display: block;
@@ -29,7 +29,7 @@ body {
     border: 1px solid black;
     margin: 100px auto;
     height: 525px;
-    width: 550px;
+    width: 650px;
     border-radius: 20px;
     position: relative;
     display: none;
@@ -38,6 +38,7 @@ body {
 
 .inputs {
     float: right;
+    height: 35px;
 }
 
 #flighttype {
@@ -58,11 +59,14 @@ body {
 #metrica {
     width: 90px;
     margin-left: 65px;
-    height: 30px;
+    height: 35px;
 }
 
 #metricaV {
     width: 90px;
     margin-left: 65px;
-    height: 30px;
+    height: 35px;
 }
+
+
+
