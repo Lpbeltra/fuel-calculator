@@ -82,5 +82,3 @@ function fuelConsunptionVfr (event) {
         document.getElementById('fuelAlertErrorV').style.display="none";
     }
 } 
-
-localStorage
