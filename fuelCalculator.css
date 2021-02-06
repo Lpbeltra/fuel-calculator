@@ -1,0 +1,68 @@
+*{
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    margin: 0px;
+    background-color: black;
+}
+
+#title1 {
+    text-align: center;
+}
+
+#mainBoxIfr {
+    padding: 20px;
+    border: 1px solid black;
+    margin: 100px auto;
+    height: 580px;
+    width: 550px;
+    border-radius: 20px;
+    position: relative;
+    display: block;
+    background-color: blanchedalmond;
+}
+
+
+ #mainBoxVfr {
+    padding: 20px;
+    border: 1px solid black;
+    margin: 100px auto;
+    height: 525px;
+    width: 550px;
+    border-radius: 20px;
+    position: relative;
+    display: none;
+    background-color: blanchedalmond;
+ }
+
+.inputs {
+    float: right;
+}
+
+#flighttype {
+    margin: 0px 0px 40px 0px;
+    text-align: center;
+}
+
+#changeFlightType {
+    text-align: right;  
+}
+
+#changeFlightType:hover {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#metrica {
+    width: 90px;
+    margin-left: 65px;
+    height: 30px;
+}
+
+#metricaV {
+    width: 90px;
+    margin-left: 65px;
+    height: 30px;
+}
