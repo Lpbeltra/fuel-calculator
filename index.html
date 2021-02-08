@@ -20,11 +20,11 @@
             
 
             <form name='ifrForm'>
-                Distancia departure/arrival (nm) <input id='depArr' required class='inputs' type="number">
+                Distancia departure/arrival (nm) <input id='depArr' class='inputs' type="number">
                 <p></p>
-                Distancia arrival/alternate (nm) <input id='arrAlt' required class='inputs' type="number">
+                Distancia arrival/alternate (nm) <input id='arrAlt' class='inputs' type="number">
                 <p></p>
-                Velocidade de cruzeiro (TAS) <input id='airSpd' required class='inputs' type='number'>
+                Velocidade de cruzeiro (TAS) <input id='airSpd' class='inputs' type='number'>
                 <p></p>
                 Consumo da aeronave 
                 <select class="form-select d-inline" name="metrica" id="metrica" style="width: 30%;">
@@ -34,9 +34,9 @@
                     <option value="Galões americanos">gl Americano/h</option>
                     <option value="libras">lbs/h</option>
                 </select> 
-                <input id='fuelCons' required class='inputs' type="number">
+                <input id='fuelCons' class='inputs' type="number">
                 <p></p>
-                Tempo taxy (min) <input id='taxyTime' class='inputs' type="number">
+                Tempo taxi (min) <input id='taxyTime' class='inputs' type="number">
                 <p></p>
                 Tempo condições adversas (min) <input id='advCond' class='inputs' type="number">
                 <p></p>
@@ -57,7 +57,7 @@
                 </div>
                 <div id='fuelAlertError' class="alert alert-danger" role="alert" style="display: none;">
                     <p id='fuelResultError' style="text-align: center; font-weight: 900;" class="my-auto" ></p>
-                  </div>
+                </div>
             </form>
         </div>
 
@@ -70,9 +70,9 @@
             
 
             <form name='vfrForm'>
-                Distancia departure/arrival (nm) <input required name='depArrv' id='depArrV' class='inputs' type="number">
+                Distancia departure/arrival (nm) <input name='depArrv' id='depArrV' class='inputs' type="number">
                 <p></p>
-                Velocidade de cruzeiro (TAS) <input required name='airSpdV' id='airSpdV' class='inputs' type='number'>
+                Velocidade de cruzeiro (TAS) <input name='airSpdV' id='airSpdV' class='inputs' type='number'>
                 <p></p>
                 Consumo da aeronave 
                 <select class="form-select d-inline" id='metricaV' name="metricaV" id="metrica" style="width: 30%;">
@@ -82,9 +82,9 @@
                     <option value="Galões americanos">gl Americano/h</option>
                     <option value="Libras">lbs/h</option>
                 </select> 
-                <input required name='fuelConsV' id='fuelConsV' class='inputs' type="number">
+                <input name='fuelConsV' id='fuelConsV' class='inputs' type="number">
                 <p></p>
-                Tempo taxy (min) <input name='taxyTimeV' id='taxyTimeV' class='inputs' type="number">
+                Tempo taxi (min) <input name='taxyTimeV' id='taxyTimeV' class='inputs' type="number">
                 <p></p>
                 Tempo extra (min) <input id='advCondV' class='inputs' type="number">
                 <p></p>

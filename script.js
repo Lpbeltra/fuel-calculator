@@ -4,9 +4,22 @@ function changeFlightType () {
     if (displayIfr.style.display=="block") {
         displayIfr.style.display="none";
         displayVfr.style.display="block";
+        fuelResult.innerHTML="";
+        fuelResultV.innerHTML="";
+        document.getElementById('fuelAlert').style.display="none";
+        document.getElementById('fuelAlertError').style.display="none";
+        document.getElementById('fuelAlertV').style.display="none";
+        document.getElementById('fuelAlertErrorV').style.display="none";
+
     } else {
         displayIfr.style.display="block";
         displayVfr.style.display="none";
+        fuelResult.innerHTML="";
+        fuelResultV.innerHTML="";
+        document.getElementById('fuelAlert').style.display="none";
+        document.getElementById('fuelAlertError').style.display="none";
+        document.getElementById('fuelAlertV').style.display="none";
+        document.getElementById('fuelAlertErrorV').style.display="none";
     }
 }
 
