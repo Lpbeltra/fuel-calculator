@@ -1,113 +1,138 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fuel Calculator</title>
-    <link rel='stylesheet' href='style.css'/>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous"> 
-</head>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fuel Calculator</title>
+        <link rel='stylesheet' href='style.css'/>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous"> 
+    </head>
     <body>
-
-        <h1 id='title1' class='mt-4'>Fuel Calculator</h1>
-        <p>
+        <h1 id='title1' class='mt-4'>
+            Fuel Calculator
+        </h1>
 
         <div id='mainBoxIfr'>
-
             <h2 id='flighttype'>VOO IFR</h2>
             
-
             <form name='ifrForm'>
-                Distancia departure/arrival (nm) <input id='depArr' class='inputs' type="number">
+                <label>Distancia departure/arrival (nm)</label>
+                <input id='depArr' class='inputs' type="number">
+
                 <p></p>
-                Distancia arrival/alternate (nm) <input id='arrAlt' class='inputs' type="number">
+
+                <label>Distancia arrival/alternate (nm) </label>
+                <input id='arrAlt' class='inputs' type="number">
+
                 <p></p>
-                Velocidade de cruzeiro (TAS) <input id='airSpd' class='inputs' type='number'>
+
+                <label>Velocidade de cruzeiro (TAS)</label>
+                <input id='airSpd' class='inputs' type='number'>
+
                 <p></p>
-                Consumo da aeronave 
-                <select class="form-select d-inline" name="metrica" id="metrica" style="width: 30%;">
-                    <option value="Kg">kg/h</option>
-                    <option value="Litros">l/h</option>
-                    <option value="Galões imperiais">gl Imperial/h</option>
-                    <option value="Galões americanos">gl Americano/h</option>
-                    <option value="libras">lbs/h</option>
-                </select> 
-                <input id='fuelCons' class='inputs' type="number">
+                
+                <label>Consumo da aeronave</label>
+                <input name='fuelCons' id='fuelCons' class='inputs' type="number">
+
                 <p></p>
-                Tempo taxi (min) <input id='taxyTime' class='inputs' type="number">
+
+                <label>Tempo taxi (min) </label>
+                <input id='taxyTime' class='inputs' type="number">
+
                 <p></p>
-                Tempo condições adversas (min) <input id='advCond' class='inputs' type="number">
+
+                <label>Tempo condições adversas (min)</label>
+                <input id='advCond' class='inputs' type="number">
+
                 <p></p>
+
                 <label class='w-100'>
                     Deseja incluir tempo de contingência? (10% A+B)
                     <div class="form-check form-switch d-inline">
                         <input class="form-check-input float-end" type="checkbox" id='contTime' checked>
-                      </div>
+                    </div>
                 </label> 
-               
+            
                 <p></p>
-                <button class="btn btn-primary fw-bold" type='submit' style="width: 100%;" onclick="fuelConsunption (event)">Calcular!</button>
+
+                <button class="btn btn-primary fw-bold" type='submit' style="width: 100%;" onclick="fuelConsunption(event)">
+                    Calcular!
+                </button>
+
                 <p></p>
-                <button class="btn btn-primary fw-bold" type="button" style="width: 100%;" onclick="changeFlightType()">Alterar para VFR</button>
+
+                <button class="btn btn-primary fw-bold" type="button" style="width: 100%;" onclick="changeFlightType()">
+                    Alterar para VFR
+                </button>
+
                 <p></p>
+
                 <div id='fuelAlert' class="alert alert-success" role="alert" style="display: none;">
                     <p id='fuelResult' style="text-align: center; font-weight: 900;" class="my-auto" ></p>
                 </div>
+
                 <div id='fuelAlertError' class="alert alert-danger" role="alert" style="display: none;">
                     <p id='fuelResultError' style="text-align: center; font-weight: 900;" class="my-auto" ></p>
                 </div>
             </form>
         </div>
 
-
-
-
         <div id='mainBoxVfr'>
-
-            <h2 id='flighttype'>VOO VFR</h2>
-            
+            <h2 id='flighttype'>
+                VOO VFR
+            </h2>
 
             <form name='vfrForm'>
-                Distancia departure/arrival (nm) <input name='depArrv' id='depArrV' class='inputs' type="number">
+                <label>Distancia departure/arrival (nm) </label>
+                <input name='depArrv' id='depArrV' class='inputs' type="number">
+
                 <p></p>
-                Velocidade de cruzeiro (TAS) <input name='airSpdV' id='airSpdV' class='inputs' type='number'>
+
+                <label>Velocidade de cruzeiro (TAS) </label>
+                <input name='airSpdV' id='airSpdV' class='inputs' type='number'>
+
                 <p></p>
-                Consumo da aeronave 
-                <select class="form-select d-inline" id='metricaV' name="metricaV" id="metrica" style="width: 30%;">
-                    <option value="Kg">kg/h</option>
-                    <option value="Litros">l/h</option>
-                    <option value="Galões imperiais">gl Imperial/h</option>
-                    <option value="Galões americanos">gl Americano/h</option>
-                    <option value="Libras">lbs/h</option>
-                </select> 
+ 
+                <label>Consumo da aeronave</label>
                 <input name='fuelConsV' id='fuelConsV' class='inputs' type="number">
+
                 <p></p>
-                Tempo taxi (min) <input name='taxyTimeV' id='taxyTimeV' class='inputs' type="number">
+
+                <label>Tempo taxi (min) </label>
+                <input name='taxyTimeV' id='taxyTimeV' class='inputs' type="number">
+
                 <p></p>
-                Tempo extra (min) <input id='advCondV' class='inputs' type="number">
+
+                <label>Tempo extra (min) </label>
+                <input id='advCondV' class='inputs' type="number">
+
                 <p></p>
-                <button class="btn btn-primary fw-bold" type='submit' style="width: 100%;" onclick="fuelConsunptionVfr(event)">Calcular!</button>
+
+                <button class="btn btn-primary fw-bold" type='submit' style="width: 100%;" onclick="fuelConsunptionVfr(event)">
+                    Calcular!
+                </button>
+
                 <p></p>
-                <button class="btn btn-primary fw-bold" type="button" style="width: 100%;" onclick="changeFlightType()">Alterar para IFR</button>
+
+                <button class="btn btn-primary fw-bold" type="button" style="width: 100%;" onclick="changeFlightType()">
+                    Alterar para IFR
+                </button>
+
                 <p></p>
                 
                 <div id='fuelAlertV' class="alert alert-success" role="alert" style="display: none;">
                     <p id='fuelResultV' style="text-align: center; font-weight: bold;" class="my-auto"></p>
                 </div>
+
                 <div id='fuelAlertErrorV' class="alert alert-danger" role="alert" style="display: none;">
-                    <p id='fuelResultErrorV' style="text-align: center; font-weight: 900;" class="my-auto" ></p>
+                    <p id='fuelResultErrorV' style="text-align: center; font-weight: 900;" class="my-auto"></p>
                 </div>
             </form>
-
-        
         </div>
+
         <script src='script.js'></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-
     </body>
-
-
-
 </html>
