@@ -1,21 +1,10 @@
 function resetFields () {
-    const depArr = Number(document.getElementById('depArr').value);
-    const arrAlt = Number(document.getElementById('arrAlt').value);
-    const airSpd = Number(document.getElementById('airSpd').value);
-    const fuelCons = Number(document.getElementById('fuelCons').value);
-    const taxyTime = Number(document.getElementById('taxyTime').value);
-    const advCond = Number(document.getElementById('advCond').value);
+    const ifrForm = document.getElementById("ifrForm")
+    const vfrForm = document.getElementById("vfrForm")
 
-    depArr.innerHTML="";
-    arrAlt.innerHTML="";
-    airSpd.innerHTML="";
-    fuelCons.innerHTML="";
-    taxyTime.innerHTML="";
-    advCond.innerHTML="";
+    ifrForm.reset();
+    vfrForm.reset();
 }
-
-
-
 
 function changeFlightType () {
     let displayIfr = document.getElementById("mainBoxIfr")
