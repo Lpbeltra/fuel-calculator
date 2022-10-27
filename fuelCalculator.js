@@ -1,4 +1,4 @@
-function changeFlightType () {
+function changeFlightType (event) {
     let displayIfr = document.getElementById("mainBoxIfr")
     let displayVfr = document.getElementById("mainBoxVfr")
     let dispSuccess = document.getElementById('fuelAlert')
@@ -28,8 +28,6 @@ function fuelConsunption (event) {
     let metrica = document.getElementById('metrica').value;
     let contTime = document.getElementById('contTime');
 
-    
-
     if (!depArr || !arrAlt || !airSpd || !fuelCons) {
         let fuelResult = document.getElementById('fuelResult')
         fuelResult.innerHTML="Preencha no mínimo os 4 primeiros campos!"; 
@@ -44,7 +42,6 @@ function fuelConsunption (event) {
         totalFuel = (totalTime + extraTime) * fuelCons;
     }
    
-    
     if (!totalFuel || totalFuel === NaN) {
         document.getElementById('fuelResultError').innerHTML ="Dados insuficientes!";
         document.getElementById('fuelAlertError').style.display="block";
@@ -66,8 +63,6 @@ function fuelConsunptionVfr (event) {
     let totalFuel;
     let metrica = document.getElementById('metricaV').value;
 
-    
-
     if (!depArr || !airSpd || !fuelCons) {
         let fuelResult = document.getElementById('fuelResultV')
         fuelResult.innerHTML="Preencha no mínimo os 3 primeiros campos!"; 
@@ -77,7 +72,6 @@ function fuelConsunptionVfr (event) {
         totalFuel = (totalTime + extraTime) * fuelCons;
     }
    
-    
     if (!totalFuel || totalFuel === NaN) {
         document.getElementById('fuelResultErrorV').innerHTML ="Dados insuficientes!";
         document.getElementById('fuelAlertErrorV').style.display="block";

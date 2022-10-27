@@ -10,14 +10,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous"> 
 </head>
     <body>
-
-        <p>
-
         <div id='mainBoxIfr'>
 
             <h2 id='flighttype'>VOO IFR</h2>
             
-
             <form name='ifrForm'>
                 Distancia departure/arrival (nm) <input id='depArr' required class='inputs' type="number">
                 <p></p>
@@ -49,7 +45,7 @@
                 <p></p>
                 <button class="btn btn-primary fw-bold" type='submit' style="width: 100%;" onclick="fuelConsunption (event)">Calcular!</button>
                 <p></p>
-                <button class="btn btn-primary fw-bold" type="reset" style="width: 100%;" onclick="changeFlightType()">Alterar para VFR</button>
+                <button class="btn btn-primary fw-bold" type="button" style="width: 100%;" onclick="changeFlightType()">Alterar para VFR</button>
                 <p></p>
                 <div id='fuelAlert' class="alert alert-success" role="alert" style="display: none;">
                     <p id='fuelResult' style="text-align: center; font-weight: 900;" class="my-auto" ></p>
@@ -59,9 +55,6 @@
                   </div>
             </form>
         </div>
-
-
-
 
         <div id='mainBoxVfr'>
 
@@ -99,14 +92,9 @@
                     <p id='fuelResultErrorV' style="text-align: center; font-weight: 900;" class="my-auto" ></p>
                 </div>
             </form>
-
-        
         </div>
         <script src='fuelCalculator.js'></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 
     </body>
-
-
-
 </html>
