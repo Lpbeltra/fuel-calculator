@@ -1,6 +1,9 @@
 function changeFlightType () {
     let displayIfr = document.getElementById("mainBoxIfr")
     let displayVfr = document.getElementById("mainBoxVfr")
+    let dispSuccess = document.getElementById('fuelAlert')
+    let dispFail = document.getElementById('fuelAlertError')
+
     if (displayIfr.style.display=="block") {
         displayIfr.style.display="none";
         displayVfr.style.display="block";
@@ -8,6 +11,9 @@ function changeFlightType () {
         displayIfr.style.display="block";
         displayVfr.style.display="none";
     }
+
+    dispSuccess.style.display="none"
+    dispFail.style.display="none"
 }
 
 function fuelConsunption (event) {
