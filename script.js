@@ -1,3 +1,22 @@
+function resetFields () {
+    const depArr = Number(document.getElementById('depArr').value);
+    const arrAlt = Number(document.getElementById('arrAlt').value);
+    const airSpd = Number(document.getElementById('airSpd').value);
+    const fuelCons = Number(document.getElementById('fuelCons').value);
+    const taxyTime = Number(document.getElementById('taxyTime').value);
+    const advCond = Number(document.getElementById('advCond').value);
+
+    depArr.innerHTML="";
+    arrAlt.innerHTML="";
+    airSpd.innerHTML="";
+    fuelCons.innerHTML="";
+    taxyTime.innerHTML="";
+    advCond.innerHTML="";
+}
+
+
+
+
 function changeFlightType () {
     let displayIfr = document.getElementById("mainBoxIfr")
     let displayVfr = document.getElementById("mainBoxVfr")
@@ -14,6 +33,8 @@ function changeFlightType () {
 
     dispSuccess.style.display="none"
     dispFail.style.display="none"
+
+    resetFields ();
 }
 
 function fuelConsunption (event) {
