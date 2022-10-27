@@ -1,4 +1,4 @@
-function changeFlightType (event) {
+function changeFlightType () {
     let displayIfr = document.getElementById("mainBoxIfr")
     let displayVfr = document.getElementById("mainBoxVfr")
     let dispSuccess = document.getElementById('fuelAlert')
