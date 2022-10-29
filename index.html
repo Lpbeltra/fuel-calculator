@@ -10,10 +10,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous"> 
 </head>
 <body>
-    <div id='mainBoxIfr' style="display: block">
+    <div id='mainBoxIfr' style="display: inline-block">
         <h2 id='flighttype'>VOO IFR</h2>
         
-        <form id='ifrForm'>
+        <form id='ifrForm'> 
             Distancia departure/arrival (nm) <input id='depArr' required class='inputs' type="number">
             <p></p>
             Distancia arrival/alternate (nm) <input id='arrAlt' required class='inputs' type="number">
@@ -88,6 +88,29 @@
             </div>
             <div id='fuelAlertErrorV' class="alert alert-danger" role="alert" style="display: none;">
                 <p id='fuelResultErrorV' style="text-align: center; font-weight: 900;" class="my-auto" ></p>
+            </div>
+        </form>
+    </div>
+
+    <div id="runwayCheck" style="display: inline-block">
+        <h2 id='actvRnwy'>ACTIVE RUNWAY</h2>
+        
+        <form id='activeRunway'>
+            Direção do vento (METAR) <input id='windDirection' required class='inputs' type="number">
+            <p></p>
+            Cabeceira Nº 1 <input id='runwayOne' required class='inputs' type="number">
+            <p></p>
+            Cebeceira Nº 2 <input id='runwayTwo' required class='inputs' type='number'>
+
+            
+            <button type="button" class="btn btn-primary fw-bold" style="width: 100%; position: relative; top:230px" onclick="runwayApp(event)">Verificar a pista</button>
+            <p></p>
+
+            <div id='rightRunwayAlert' class="alert alert-success" role="alert" style="display: none; position: relative; top: 234px;">
+                <p id='rightRunway' style="text-align: center; font-weight: bold;" class="my-auto" ></p>
+            </div>
+            <div id="insuficientDataError" class="alert alert-danger" role="alert" style="display: none; position: relative; top: 234px;">
+                <p id='insuficientData' style="text-align: center; font-weight: bold;" class="my-auto" ></p>
             </div>
         </form>
     </div>
