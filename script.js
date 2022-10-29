@@ -12,11 +12,11 @@ function changeFlightType () {
     let dispSuccess = document.getElementById('fuelAlert')
     let dispFail = document.getElementById('fuelAlertError')
 
-    if (displayIfr.style.display=="block") {
+    if (displayIfr.style.display=="inline-block") {
         displayIfr.style.display="none";
-        displayVfr.style.display="block";
+        displayVfr.style.display="inline-block";
     } else {
-        displayIfr.style.display="block";
+        displayIfr.style.display="inline-block";
         displayVfr.style.display="none";
     }
 
@@ -26,7 +26,7 @@ function changeFlightType () {
     resetFields ();
 }
 
-function fuelConsunption (event) {
+function fuelConsunption(event) {
     event.preventDefault();
     let depArr = Number(document.getElementById('depArr').value);
     let arrAlt = Number(document.getElementById('arrAlt').value);
@@ -92,3 +92,36 @@ function fuelConsunptionVfr (event) {
         document.getElementById('fuelAlertErrorV').style.display="none";
     }
 } 
+
+function runwayApp (event) {
+    event.preventDefault();
+    const windDirection = Number(document.getElementById('windDirection').value);
+    let runwayOne = Number(document.getElementById('runwayOne').value);
+    const runwayTwo = Number(document.getElementById('runwayTwo').value);
+    let windRun1 = windDirection-runwayOne;
+    let windRun2 = windDirection-runwayTwo;
+    let finalRunway;
+
+    if (!windDirection || !runwayOne || !runwayTwo) {
+        document.getElementById('insuficientData').innerHTML = "Preencha todos os campos!";
+      
+    } else { 
+        windRun1 = windDirection-runwayOne;
+        windRun2 = windDirection-runwayTwo;
+        if (windRun1 > 90) {
+            finalRunway = runwayTwo;
+        } else {
+            finalRunway = runwayOne;
+        }
+    }
+
+    if (!finalRunway || !finalRunway === NaN) {
+        document.getElementById('insuficientData').innerHTML = "Dados insuficientes";
+        document.getElementById('insuficientDataError').style.display='block';
+        document.getElementById('rightRunwayAlert').style.display="none";
+    } else {
+        document.getElementById('rightRunway').innerHTML ="Você utilizará a pista " + finalRunway;
+        document.getElementById('rightRunwayAlert').style.display="block";
+        document.getElementById('insuficientDataError').style.display="none";
+    }
+}

@@ -19,7 +19,7 @@ body {
     width: 650px;
     border-radius: 20px;
     position: relative;
-    display: block;
+    display: inline-block;
     background-color: blanchedalmond;
 }
 
@@ -68,5 +68,20 @@ body {
     height: 35px;
 }
 
+#runwayCheck {
+    padding: 20px;
+    border: 1px solid black;
+    margin: 100px auto;
+    height: 580px;
+    width: 650px;
+    border-radius: 20px;
+    position: relative;
+    display: block;
+    float: right;
+    background-color: blanchedalmond;
+}
 
-
+#actvRnwy {
+    margin: 0px 0px 40px 0px;
+    text-align: center;
+}
