@@ -95,23 +95,21 @@ function fuelConsunptionVfr (event) {
 
 function runwayApp (event) {
     event.preventDefault();
-    const windDirection = Number(document.getElementById('windDirection').value);
-    let runwayOne = Number(document.getElementById('runwayOne').value);
+    const windDirection = Number(document.getElementById('windDirection').value.slice(0,2));
+    const runwayOne = Number(document.getElementById('runwayOne').value);
     const runwayTwo = Number(document.getElementById('runwayTwo').value);
-    let windRun1 = windDirection-runwayOne;
-    let windRun2 = windDirection-runwayTwo;
+    const windRun1 = Math.abs(windDirection-runwayOne);
     let finalRunway;
 
     if (!windDirection || !runwayOne || !runwayTwo) {
         document.getElementById('insuficientData').innerHTML = "Preencha todos os campos!";
       
     } else { 
-        windRun1 = windDirection-runwayOne;
-        windRun2 = windDirection-runwayTwo;
-        if (windRun1 > 90) {
-            finalRunway = runwayTwo;
-        } else {
+
+        if (windRun1 <= 9) {
             finalRunway = runwayOne;
+        } else {
+            finalRunway = runwayTwo;
         }
     }
 
